@@ -1,0 +1,31 @@
+.container-fluid
+{
+    background-color: cadetblue;
+    height: calc(100vh - 4rem);
+}
+
+.overflow-x-auto
+{
+    overflow-x: auto;
+}
+
+.state-header
+{
+    background-color: coral;
+}
+
+.board-task
+{
+    background-color: white;
+    cursor: move;
+}
+
+.board-task-type
+{
+    color: blue;
+}
+
+.board-task-assignee
+{
+    color: coral;
+}
