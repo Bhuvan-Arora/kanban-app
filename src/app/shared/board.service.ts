@@ -13,6 +13,7 @@ export class BoardService {
   private states: string[] = ['To Do', 'In Progress', 'Under Review', 'Done'];
 
   private tasks: Task[] =[{
+    taskId: 0,
     type: 'Story',
     title: 'Bhuvan',
     description: 'Hello World I am your friend!',
@@ -20,6 +21,7 @@ export class BoardService {
     assignee: 'Robert Nilson'
   },
   {
+    taskId: 1,
     type: 'Epic',
     title: 'Max',
     description: 'Hello World I am your enemy!',
@@ -27,6 +29,7 @@ export class BoardService {
     assignee: 'Ronnie Jenson'
   },
   {
+    taskId: 2,
     type: 'Task',
     title: 'John',
     description: 'Hello World I am your Boss!',
@@ -47,5 +50,10 @@ export class BoardService {
   get boardTasks(): Task[]
   {
     return this.tasks;
+  }
+
+  set boardTasks(tasks: Task[])
+  {
+    this.tasks = tasks;
   }
 }

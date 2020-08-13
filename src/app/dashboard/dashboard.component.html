@@ -1,14 +1,14 @@
 <div class="container-fluid">
     <div class="row h-100">
         <div class="col-12 p-0">
-            <div class="overflow-x-auto w-100 h-100 d-flex">
+            <div cdkDropListGroup class="overflow-x-auto w-100 h-100 d-flex">
                 <div class="col-4 col-md-6 p-3 " *ngFor="let boardState of boardStates; index as i">
                     <div class="border state-wrapper h-100">
                         <div class="state-header p-3 w-100 font-weight-bold">
                             {{boardState}}
                         </div>
-                        <div class="state-content p-3">
-                            <div *ngFor="let boardTask of boardTasks;">
+                        <div cdkDropList [cdkDropListData]="boardTasks | filterArray:i" (cdkDropListDropped)="drop($event)" id="cdkDropList-{{i}}" stateId="{{i}}" class="state-content p-3">
+                            <div cdkDrag [cdkDragData]="boardTask" *ngFor="let boardTask of boardTasks;">
                                 <div class="board-task w-100 mb-3 p-3" *ngIf="i === boardTask.stateId">
                                     <div class=" d-flex justify-content-between">
                                         <div class="board-task-title font-weight-bold pr-1">{{boardTask.title}}</div>
