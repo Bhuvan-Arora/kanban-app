@@ -1,7 +1,11 @@
 .container-fluid
 {
     background-color: cadetblue;
-    height: calc(100vh - 4rem);
+}
+
+.container-fluid > .row
+{
+    min-height: calc(100vh - 4rem);
 }
 
 .overflow-x-auto

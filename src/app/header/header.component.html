@@ -1,8 +1,14 @@
-<div class="app-header d-flex w-100 p-3 justify-content-between">
+<div class="app-header d-flex w-100 p-3 justify-content-between align-items-center">
     <div class="board-name">
         {{boardName}}
     </div>
-    <div class="app-name d-flex align-self-center">
+    <a class="add-task" routerLink="dashboard" routerLinkActive="active-link">
+        Home
+    </a>
+    <a class="add-task" routerLink="addTask" routerLinkActive="active-link">
+        Add Task
+    </a>
+    <div class="app-name">
         {{appName}}
     </div>
 </div>

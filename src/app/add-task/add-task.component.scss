@@ -1,0 +1,9 @@
+.container-fluid
+{
+    background-color: cadetblue;
+}
+
+.container-fluid > .row
+{
+    min-height: calc(100vh - 4rem);
+}

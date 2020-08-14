@@ -10,7 +10,7 @@ import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/dr
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(public boardService: BoardService) { }
+  constructor(private boardService: BoardService) { }
   boardStates: string[];
   boardTasks: Task[];
 
