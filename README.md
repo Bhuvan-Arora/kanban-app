@@ -1,6 +1,14 @@
 # KanbanApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.5.
+This is a Kanban board where you can create your tickets and track it's status.
+![Project Image](https://github.com/Bhuvan-Arora/Kanban-app/src/assets/images/kanban-app.png?raw=true)
+
+### Steps to setup this project :
+
+Clone the repository.\
+Make Sure you have node installed in your system.\
+Run `npm install` to install the project dependencies.
 
 ## Development server
 
