@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BoardService } from '../shared/board.service';
 import { Task } from '../shared/task.model';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,7 +11,7 @@ import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/dr
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(private boardService: BoardService) { }
+  constructor(private boardService: BoardService, private router: Router) { }
   boardStates: string[];
   boardTasks: Task[];
 
@@ -20,7 +21,6 @@ export class DashboardComponent implements OnInit {
   }
 
   drop(event: CdkDragDrop<string[]>) {
-    debugger;
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
@@ -42,6 +42,13 @@ export class DashboardComponent implements OnInit {
         });
         this.boardService.boardTasks = updatedBoardTasks;
     }
+  }
+
+
+  onEdit(e)
+  {
+    let taskId = e.target.closest('.task-card').id;
+    this.router.navigate(['/editTask'], { queryParams: { taskId: taskId } });
   }
 
 }

@@ -10,6 +10,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FilterArrayPipe } from './shared/filter-array.pipe';
 import { AddTaskComponent } from './add-task/add-task.component';
+import { EditTaskComponent } from './edit-task/edit-task.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { AddTaskComponent } from './add-task/add-task.component';
     HeaderComponent,
     DashboardComponent,
     FilterArrayPipe,
-    AddTaskComponent
+    AddTaskComponent,
+    EditTaskComponent
   ],
   imports: [
     BrowserModule,
