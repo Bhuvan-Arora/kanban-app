@@ -2,7 +2,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { Task } from './task.model';
 
 @Pipe({
-  name: 'filterArrayCount'
+  name: 'filterArrayCount',
+  pure: false
 })
 export class FilterArrayCountPipe implements PipeTransform {
 

@@ -30,7 +30,7 @@ export class DashboardComponent implements OnInit {
         event.currentIndex);
         let stateId = +event.container.id.split('-')[1];
         event.item.data.stateId = stateId;
-
+debugger;
         let updatedBoardTasks = this.boardService.boardTasks.filter((task)=> {
           let newArray: Task[] = [];
           if(task.taskId === event.item.data.taskId)
@@ -47,13 +47,13 @@ export class DashboardComponent implements OnInit {
 
   onEdit(e)
   {
-    let taskId = e.target.closest('.task-card').id;
+    let taskId = e.target.closest('.board-task').id;
     this.router.navigate(['/editTask'], { queryParams: { taskId: taskId } });
   }
 
   onDelete(e)
   {
-    let taskId = e.target.closest('.task-card').id;
+    let taskId = e.target.closest('.board-task').id;
     this.boardService.deleteTask(taskId);
   }
 }

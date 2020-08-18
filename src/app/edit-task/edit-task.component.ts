@@ -22,7 +22,6 @@ export class EditTaskComponent implements OnInit {
 
   onSubmit()
   {
-    debugger;
     this.boardService.updateBoardTask(this.taskForm.value, this.taskId);
     this.router.navigate(['/dashboard']);
   }
