@@ -56,4 +56,10 @@ export class BoardService {
   {
     this.tasks = tasks;
   }
+
+  deleteTask(taskId)
+  {
+    let taskIndex = this.boardTasks.findIndex((obj => obj.taskId == taskId));
+    this.boardTasks.splice(taskIndex, 1);
+  }
 }

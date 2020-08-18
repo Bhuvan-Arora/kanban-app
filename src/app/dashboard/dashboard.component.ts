@@ -54,8 +54,7 @@ export class DashboardComponent implements OnInit {
   onDelete(e)
   {
     let taskId = e.target.closest('.task-card').id;
-    let taskIndex = this.boardService.boardTasks.findIndex((obj => obj.taskId == taskId));
-    this.boardService.boardTasks.splice(taskIndex, 1);
+    this.boardService.deleteTask(taskId);
   }
 }
 
