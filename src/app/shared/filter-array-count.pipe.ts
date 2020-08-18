@@ -2,10 +2,11 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { Task } from './task.model';
 
 @Pipe({
-  name: 'filterArray'
+  name: 'filterArrayCount'
 })
-export class FilterArrayPipe implements PipeTransform {
-  transform(values: Task[], state: number): Task[] {
+export class FilterArrayCountPipe implements PipeTransform {
+
+  transform(values: Task[], state: number): number{
     let newArray: Task[] = [];
     for(let value of values)
     {
@@ -14,7 +15,7 @@ export class FilterArrayPipe implements PipeTransform {
         newArray.push(value);
       }
     }
-    return newArray;
+    return newArray.length;
   }
 
 }

@@ -11,6 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FilterArrayPipe } from './shared/filter-array.pipe';
 import { AddTaskComponent } from './add-task/add-task.component';
 import { EditTaskComponent } from './edit-task/edit-task.component';
+import { FilterArrayCountPipe } from './shared/filter-array-count.pipe';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { EditTaskComponent } from './edit-task/edit-task.component';
     DashboardComponent,
     FilterArrayPipe,
     AddTaskComponent,
-    EditTaskComponent
+    EditTaskComponent,
+    FilterArrayCountPipe
   ],
   imports: [
     BrowserModule,
