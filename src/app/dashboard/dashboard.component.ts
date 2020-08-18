@@ -30,7 +30,7 @@ export class DashboardComponent implements OnInit {
         event.currentIndex);
         let stateId = +event.container.id.split('-')[1];
         event.item.data.stateId = stateId;
-debugger;
+        
         let updatedBoardTasks = this.boardService.boardTasks.filter((task)=> {
           let newArray: Task[] = [];
           if(task.taskId === event.item.data.taskId)
@@ -55,6 +55,7 @@ debugger;
   {
     let taskId = e.target.closest('.board-task').id;
     this.boardService.deleteTask(taskId);
+    this.boardTasks = this.boardService.boardTasks;
   }
 }
 
