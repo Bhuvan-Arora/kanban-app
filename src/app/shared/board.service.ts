@@ -18,7 +18,7 @@ export class BoardService {
     title: 'Bhuvan',
     description: 'Hello World I am your friend!',
     stateId: 0,
-    assignee: 'Robert Nilson'
+    assignee: 'Robert Nilson',
   },
   {
     taskId: 1,

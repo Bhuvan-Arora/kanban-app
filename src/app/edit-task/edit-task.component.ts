@@ -12,15 +12,17 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class EditTaskComponent implements OnInit {
   @ViewChild('taskForm') public taskForm: NgForm;
   boardTask: Task;
+  taskIndex: number;
   constructor(private boardService: BoardService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-   this.boardTask  = this.boardService.boardTasks[this.route.snapshot.queryParams.taskId];
+  this.taskIndex = this.boardService.boardTasks.findIndex((obj => obj.taskId == this.route.snapshot.queryParams.taskId))
+   this.boardTask  = this.boardService.boardTasks[this.taskIndex];
   }
 
   onSubmit()
   {
-    let task =  this.boardService.boardTasks[this.route.snapshot.queryParams.taskId];
+    let task =  this.boardService.boardTasks[this.taskIndex];
     let newTask = {...task, ...this.taskForm.value};
     this.boardService.boardTasks[this.route.snapshot.queryParams.taskId] = newTask;
     

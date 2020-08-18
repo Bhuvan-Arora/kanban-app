@@ -51,5 +51,11 @@ export class DashboardComponent implements OnInit {
     this.router.navigate(['/editTask'], { queryParams: { taskId: taskId } });
   }
 
+  onDelete(e)
+  {
+    let taskId = e.target.closest('.task-card').id;
+    let taskIndex = this.boardService.boardTasks.findIndex((obj => obj.taskId == taskId));
+    this.boardService.boardTasks.splice(taskIndex, 1);
+  }
 }
 
