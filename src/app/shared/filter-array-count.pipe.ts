@@ -3,7 +3,7 @@ import { Task } from './task.model';
 
 @Pipe({
   name: 'filterArrayCount',
-  pure: false
+  pure: true
 })
 export class FilterArrayCountPipe implements PipeTransform {
 

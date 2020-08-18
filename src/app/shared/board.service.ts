@@ -1,12 +1,15 @@
 import { Injectable } from '@angular/core';
 import {Task} from "./task.model";
+import { Observable, Subscription } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BoardService {
 
-  constructor() { }
+  
+  constructor() {  
+  }
 
   private name: string = "Practice Angular";
 
@@ -67,6 +70,8 @@ export class BoardService {
   {
     let taskIndex = this.boardTasks.findIndex((obj => obj.taskId == taskId));
     this.boardTasks.splice(taskIndex, 1);
+    let abc = [...this.boardTasks];
+    this.boardTasks = abc;
   }
   
   updateBoardTask(task: Task, taskId: number)
