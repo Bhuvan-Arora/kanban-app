@@ -57,9 +57,23 @@ export class BoardService {
     this.tasks = tasks;
   }
 
+  getBoardTask(taskId) : Task
+  {
+    let taskIndex = this.boardTasks.findIndex((obj => obj.taskId == taskId))
+    return this.boardTasks[taskIndex];
+  }
+
   deleteTask(taskId)
   {
     let taskIndex = this.boardTasks.findIndex((obj => obj.taskId == taskId));
     this.boardTasks.splice(taskIndex, 1);
+  }
+  
+  updateBoardTask(task: Task, taskId: number)
+  {
+    let taskIndex = this.boardTasks.findIndex((obj => obj.taskId == taskId));
+    let oldTask = this.boardTasks[taskIndex];
+    let newTask = {...oldTask, ...task};
+    this.boardTasks[taskIndex] = newTask;
   }
 }
