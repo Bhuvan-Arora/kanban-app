@@ -10,9 +10,15 @@ export class HeaderComponent implements OnInit {
 
   constructor(public boardService : BoardService) { }
   appName = "Kanban Board";
-  boardName = "";
+  boardName;
+  boardTaskCount;
   ngOnInit(): void {
     this.boardName = this.boardService.boardName;
+    this.boardTaskCount = this.boardService.boardTasks.length;
+    
+    this.boardService.taskCountChanged.subscribe((data) => {
+      this.boardTaskCount = data;
+    });
   }
 
 }

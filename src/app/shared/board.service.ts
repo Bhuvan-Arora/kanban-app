@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Task} from "./task.model";
-import { Observable, Subscription } from 'rxjs';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +9,10 @@ export class BoardService {
 
   
   constructor() {  
+    this.taskCountChanged = new Subject<string>();
   }
+
+  public taskCountChanged;
 
   private name: string = "Practice Angular";
 
@@ -58,6 +61,7 @@ export class BoardService {
   set boardTasks(tasks: Task[])
   {
     this.tasks = tasks;
+    this.taskCountChanged.next(this.tasks.length);
   }
 
   getBoardTask(taskId) : Task
@@ -72,6 +76,7 @@ export class BoardService {
     this.boardTasks.splice(taskIndex, 1);
     let abc = [...this.boardTasks];
     this.boardTasks = abc;
+    this.taskCountChanged.next(this.boardTasks.length);
   }
   
   updateBoardTask(task: Task, taskId: number)
