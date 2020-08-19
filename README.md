@@ -4,6 +4,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 This is a Kanban board where you can create your tickets and track it's status.\
 ![Project Image](https://github.com/Bhuvan-Arora/kanban-app/blob/master/src/assets/images/kanban-app.png?raw=true)
 
+
+Live Demo : https://kanban-app.netlify.app/
+
 ### Steps to setup this project :
 
 Clone the repository.\
