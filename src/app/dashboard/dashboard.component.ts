@@ -31,31 +31,13 @@ export class DashboardComponent implements OnInit {
         let stateId = +event.container.id.split('-')[1];
         event.item.data.stateId = stateId;
         
-        let updatedBoardTasks = this.boardService.boardTasks.filter((task)=> {
-          let newArray: Task[] = [];
+        this.boardService.boardTasks.filter((task)=> {
           if(task.taskId === event.item.data.taskId)
           { 
               task.stateId = stateId;
           }
-          newArray.push(task);
-          return newArray;
         });
-        this.boardService.boardTasks = updatedBoardTasks;
     }
-  }
-
-
-  onEdit(e)
-  {
-    let taskId = e.target.closest('.board-task').id;
-    this.router.navigate(['/editTask'], { queryParams: { taskId: taskId } });
-  }
-
-  onDelete(e)
-  {
-    let taskId = e.target.closest('.board-task').id;
-    this.boardService.deleteTask(taskId);
-    this.boardTasks = this.boardService.boardTasks;
   }
 }
 

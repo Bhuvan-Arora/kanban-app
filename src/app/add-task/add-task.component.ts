@@ -24,7 +24,7 @@ export class AddTaskComponent implements OnInit {
     newTask['stateId'] = 0;
     
     this.boardService.boardTasks.push(newTask);
-    this.boardService.boardTasks = [...this.boardService.boardTasks];
+    this.boardService.taskCountChanged.next(this.boardService.boardTasks.length);
     this.router.navigate(['/dashboard']);
   }
 

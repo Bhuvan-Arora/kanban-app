@@ -74,8 +74,6 @@ export class BoardService {
   {
     let taskIndex = this.boardTasks.findIndex((obj => obj.taskId == taskId));
     this.boardTasks.splice(taskIndex, 1);
-    let abc = [...this.boardTasks];
-    this.boardTasks = abc;
     this.taskCountChanged.next(this.boardTasks.length);
   }
   

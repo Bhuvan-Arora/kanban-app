@@ -12,6 +12,7 @@ import { FilterArrayPipe } from './shared/filter-array.pipe';
 import { AddTaskComponent } from './add-task/add-task.component';
 import { EditTaskComponent } from './edit-task/edit-task.component';
 import { FilterArrayCountPipe } from './shared/filter-array-count.pipe';
+import { TaskComponent } from './task/task.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { FilterArrayCountPipe } from './shared/filter-array-count.pipe';
     FilterArrayPipe,
     AddTaskComponent,
     EditTaskComponent,
-    FilterArrayCountPipe
+    FilterArrayCountPipe,
+    TaskComponent
   ],
   imports: [
     BrowserModule,
