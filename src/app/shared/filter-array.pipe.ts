@@ -2,7 +2,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { Task } from './task.model';
 
 @Pipe({
-  name: 'filterArray'
+  name: 'filterArray',
+  pure: false
 })
 export class FilterArrayPipe implements PipeTransform {
   transform(values: Task[], state: number): Task[] {
