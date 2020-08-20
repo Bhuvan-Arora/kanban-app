@@ -4,7 +4,7 @@
             <form (ngSubmit)="onSubmit()" #taskForm="ngForm">
                 <div class="form-group">
                     <label for="type">Task Type</label>
-                    <select class="form-control" [(ngModel)]="boardTask.type" name="type" id="type" required>
+                    <select class="form-control" [ngModel]="boardTask.type" name="type" id="type" required>
                         <option disabled>Select Type</option>
                         <option value="Story">Story</option>
                         <option value="Epic">Epic</option>
