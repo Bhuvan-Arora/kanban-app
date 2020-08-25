@@ -1,10 +1,10 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-12 my-3">
-            <form (ngSubmit)="onSubmit()" #taskForm="ngForm">
+            <form (ngSubmit)="onSubmit()" [formGroup]="editTaskForm">
                 <div class="form-group">
                     <label for="type">Task Type</label>
-                    <select class="form-control" [ngModel]="boardTask.type" name="type" id="type" required>
+                    <select class="form-control" [formControlName]="'type'" id="type" required>
                         <option disabled>Select Type</option>
                         <option value="Story">Story</option>
                         <option value="Epic">Epic</option>
@@ -13,15 +13,15 @@
                 </div>
                 <div class="form-group">
                     <label for="title">Title</label>
-                    <input class="form-control" [ngModel]="boardTask.title" name="title" id="title" type="text" required />
+                    <input class="form-control" [formControlName]="'title'" id="title" type="text" required />
                 </div>
                 <div class="form-group">
                     <label for="description">Description</label>
-                    <input class="form-control" [ngModel]="boardTask.description" name="description" id="description" type="text" required />
+                    <input class="form-control" [formControlName]="'description'" id="description" type="text" required />
                 </div>
                 <div class="form-group">
                     <label for="assignee">Assignee</label>
-                    <input class="form-control" [ngModel]="boardTask.assignee" name="assignee" id="assignee" type="text" required />
+                    <input class="form-control" [formControlName]="'assignee'" id="assignee" type="text" required />
                 </div>
                 <button type="submit" name="submit" class="btn btn-primary" [disabled]="!taskForm.form.valid">Update</button>
             </form>
